@@ -1,0 +1,154 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema gru_h3_gru
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema gru_h3_gru
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `gru_h3_gru` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema gru_h3_gru
+-- -----------------------------------------------------
+USE `gru_h3_gru` ;
+
+-- -----------------------------------------------------
+-- Table `gru_h3_gru`.`movies`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`movies` (
+  `Movie_ID` INT(11) NOT NULL,
+  `Title` VARCHAR(45) NOT NULL,
+  `decription` VARCHAR(45) NULL DEFAULT NULL,
+  `duration` VARCHAR(45) NULL DEFAULT NULL,
+  `Imdb_rating` VARCHAR(45) NOT NULL,
+  `User_rating` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`Movie_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `0304922269_gru`.`pictures`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`pictures` (
+  `Picture_ID` INT(11) NOT NULL,
+  `Title` VARCHAR(45) NULL,
+  `Link` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`Picture_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `0304922269_gru`.`series`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`series` (
+  `Series_ID` INT(11) NOT NULL,
+  `Title` VARCHAR(45) NULL DEFAULT NULL,
+  `poster` VARCHAR(45) NULL DEFAULT NULL,
+  `Series` VARCHAR(45) NULL DEFAULT NULL,
+  `Episode` VARCHAR(45) NULL DEFAULT NULL,
+  `Description` VARCHAR(45) NULL DEFAULT NULL,
+  `Duration` VARCHAR(45) NULL DEFAULT NULL,
+  `world_rating` VARCHAR(45) NULL DEFAULT NULL,
+  `User_rating` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`Series_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `gru_h3_gru`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`users` (
+  `User_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `Username` VARCHAR(45) NOT NULL,
+  `Email` VARCHAR(45) NULL DEFAULT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`User_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `gru_h3_gru`.`users_has_movies`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`users_has_movies` (
+  `users_has_movies_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `users_User_ID` INT(11) NOT NULL,
+  `movies_Movie_ID` INT(11) NOT NULL,
+  INDEX `fk_users_has_movies_movies1_idx` (`movies_Movie_ID` ASC),
+  INDEX `fk_users_has_movies_users_idx` (`users_User_ID` ASC),
+  PRIMARY KEY (`users_has_movies_ID`),
+  CONSTRAINT `fk_users_has_movies_users`
+    FOREIGN KEY (`users_User_ID`)
+    REFERENCES `gru_h3_gru`.`users` (`User_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_users_has_movies_movies1`
+    FOREIGN KEY (`movies_Movie_ID`)
+    REFERENCES `gru_h3_gru`.`movies` (`Movie_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `gru_h3_gru`.`users_has_series`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`users_has_series` (
+  `users_has_series_ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `users_User_ID` INT(11) NOT NULL,
+  `series_Series_ID` INT(11) NOT NULL,
+  INDEX `fk_users_has_series_series1_idx` (`series_Series_ID` ASC),
+  INDEX `fk_users_has_series_users1_idx` (`users_User_ID` ASC),
+  PRIMARY KEY (`users_has_series_ID`),
+  CONSTRAINT `fk_users_has_series_users1`
+    FOREIGN KEY (`users_User_ID`)
+    REFERENCES `gru_h3_gru`.`users` (`User_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_users_has_series_series1`
+    FOREIGN KEY (`series_Series_ID`)
+    REFERENCES `gru_h3_gru`.`series` (`Series_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `gru_h3_gru`.`pictures_has_users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `gru_h3_gru`.`pictures_has_users` (
+  `pictures_Picture_ID` INT(11) NOT NULL,
+  `users_User_ID` INT(11) NOT NULL,
+  PRIMARY KEY (`pictures_Picture_ID`, `users_User_ID`),
+  INDEX `fk_pictures_has_users_users1_idx` (`users_User_ID` ASC),
+  INDEX `fk_pictures_has_users_pictures1_idx` (`pictures_Picture_ID` ASC),
+  CONSTRAINT `fk_pictures_has_users_pictures1`
+    FOREIGN KEY (`pictures_Picture_ID`)
+    REFERENCES `gru_h3_gru`.`pictures` (`Picture_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pictures_has_users_users1`
+    FOREIGN KEY (`users_User_ID`)
+    REFERENCES `gru_h3_gru`.`users` (`User_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

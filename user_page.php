@@ -12,7 +12,7 @@
     <h1 class="headermiddle">Entertainment Database</h1>
     <div class="account">
         <div class="Accountpic">
-            <img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" border=1 height="90px" max-width="100%">    
+            <img src="http://www.dvdsreleasedates.com/posters/800/D/Deadpool-2016-movie-poster.jpg" border=1 height="90px" max-width="100%">    
         </div>
         <div class="Accountinfo">
             <p class="user">User</p>
@@ -25,27 +25,7 @@
 <br>
 <br>
 <br>
-	<!--
-    <div class="tabs">
-    <ul class="tab-links">
-        <li class="active"><a href="#tab1">Tab #1</a></li>
-        <li><a href="#tab2">Tab #2</a></li>
-        <li><a href="#tab3">Tab #3</a></li>
-        <li><a href="#tab4">Tab #4</a></li>
-    </ul>
-    <ul id="tabs">
-        <li><a href="#about">About JavaScript tabs</a></li>
-        <li><a href="#advantages">Advantages of tabs</a></li>
-        <li><a href="#usage">Using tabs</a></li>
-    </ul>
-    
-    <div class="tabContent" id="about">
-  <h2>About JavaScript tabs</h2>
-  <div>
-    <p>JavaScript tabs partition your Web page content into tabbed sections. Only one section at a time is visible.</p>
-    <p>The code is written in such a way that the page degrades gracefully in browsers that don't support JavaScript or CSS.</p>
-  </div>
-</div> -->
+	
 <ul class="tabs">
     <li>
         <input type="radio" name="tabs" id="tab1" checked />
@@ -88,13 +68,21 @@
                                 {
                                     $link[] = $row['Link'];
                                 }
+                                $rowcount = 0;
                                 for ($counter=0; $counter < count($link); $counter++) 
                                 { 
-                                    echo '<td><img src="$link[$counter]"></img></td>';
-                                    $counter++;
+                                    echo "<td><img src=\"$link[$counter]\"></img></td>";
+                                    $rowcount++;
+                                    if($rowcount % 9 == 0)
+                                    	echo "</tr><tr>";
                                 }
                                 ?>
   
+                            </tr>
+
+                            <tr>
+                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE&commat;"></img></td>
+								<!--<td><img src="include 'getImage.php';"></td>
                                 <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE&commat;._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
                                 <td><img src="http://4k.com/wp-content/uploads/2014/06/4k-image-tiger-jumping.jpg" alt=""></img></td>
                                 <td><img src="assets/SteveAustin_NoImageSelected.gif" alt=""></img></td>
@@ -103,21 +91,8 @@
                                 <td><img src="http://ia.media-imdb.com/images/M/MV5BMjE2Njk4MTIwNl5BMl5BanBnXkFtZTYwNjI2NjE3._V1_SX640_SY720_.jpg" alt=""></img></td>
                                 <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
                                 <td><img src="http://gcathletics.com/images/150x500_coke.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_SX300.jpg" alt=""></img></td>
-                            </tr>
-
-                            <tr>
-                            
-								<!--<td><img src="include 'getImage.php';"></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>-->
+                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_SX300.jpg" alt=""></img></td>-->
+                                
                             </tr>
                             <tr>
                                 <!--<td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt=""></img></td>
@@ -220,7 +195,7 @@
         <div id="tab-content2" class="tab-content">
             <div class="grid">
                 <div class= "column">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_SY1000_SX686_AL_.jpg" border=1 width=48%></img>
+                    <img src="http://www.dvdsreleasedates.com/images/orig/L/Las-Vegas-TV-Series-2003-2008.jpg" border=1 width=48%></img>
                     <table class="smalltable">
                         <tr>
                             <th>Title</th>
@@ -265,19 +240,51 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Poster</th>
-                                <th>Name</th>
-                                <th>Info</th>
-                                <th>Number of Episodes</th>
-                                <th>Catagory</th>
-                                <th>Imdb rating</th>
-                                <th>User rating</th>
-                                <th>Rating Diffrence</th>
+                                <th class="Poster">Poster</th>
+                                <th class="Name">Name</th>
+                                <th class="Info">Info</th>
+                                <th class="Episode">Number of Episodes</th>
+                                <th class="Duration">Duration</th>
+                                <th class="Imdb">Imdb rating</th>
+                                <th class="User">User rating</th>
+                                <th class="RD">Rating Diffrence</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>  
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMTk2Mjc0NTM2N15BMl5BanBnXkFtZTcwNTI5OTU3MQ@@._V1_UY268_CR6,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
+                            <tr> 
+                                <?php
+                                try
+                                {
+                                    $sql = "SELECT Title,poster,Episode,Description,Duration,world_rating,User_rating,Rating_diffrence FROM series JOIN users_has_series ON series.Series_ID=users_has_series.series_Series_ID";
+                                    $result = $Connection->query($sql);
+
+                                }
+                                catch (PDOException $e)
+                                {
+                                    echo 'Error fetching link:'. $e -> getMessage();
+                                }
+                                while ($row = $result->fetch()) 
+                                {
+                                    
+                                    $linkur[] = $row['poster'];
+                                    $linkur[] = $row['Title'];
+                                    $linkur[] = $row['Description'];
+                                    $linkur[] = $row['Episode'];
+                                    $linkur[] = $row['Duration'];
+                                    $linkur[] = $row['world_rating'];
+                                    $linkur[] = $row['User_rating'];
+                                    $linkur[] = $row['Rating_diffrence'];
+                                }
+                                $rowcount = 0;
+                                for ($counter1=0; $counter1 < count($linkur); $counter1++) 
+                                { 
+                                    echo "<td>$linkur[$counter1]</td>";
+                                    $rowcount++;
+                                    if($rowcount % 8 == 0)
+                                        echo "</tr><tr>";
+                                }
+                                ?>
+                                <!--<td><img src="http://ia.media-imdb.com/images/M/MV5BMTk2Mjc0NTM2N15BMl5BanBnXkFtZTcwNTI5OTU3MQ@@._V1_UY268_CR6,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
                                 <td>Las Vegas</td>
                                 <td>Welcome to the Montecito Resort & Casino in Las Vegas, where you can do anything you want... but Ed Deline and his crack surveillance team will be watching. Just remember, what happens in Vegas, stays in Vegas.</td>
                                 <td>103</td>
@@ -287,85 +294,7 @@
                                 <td>Math</td>
                             </tr>
                             <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMTk0MTAzMzgxOV5BMl5BanBnXkFtZTgwOTM3Mjg4MzE@._V1_UY268_CR10,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>The Simpson</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMTg3NTkwNzAxOF5BMl5BanBnXkFtZTcwMjM1NjI5MQ@@._V1_UY268_CR0,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Prison Break</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                               <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
+                                -->
                             </tr>
                         </tbody>
                     </table>
@@ -380,7 +309,7 @@
         <div id="tab-content3" class="tab-content">
             <div class="grid">
                 <div class= "column">
-                    <img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" border=1 width=48%></img>
+                    <img src="http://www.dvdsreleasedates.com/posters/800/D/Deadpool-2016-movie-poster.jpg" border=1 width=48%></img>
                     <table class="smalltable">
                         <tr>
                             <th>Title</th>
@@ -441,7 +370,6 @@
 							    } 
 							} 
 							
-							include 'dbcon_gru.php'
 							try {
 							    $stmt = $Connection->prepare("SELECT Poster, Title, Genre, duration, Imdb_rating FROM movies"); 
 							    $stmt->execute();
@@ -458,8 +386,8 @@
 							$Connection = null;
 							
 							?>
-                            <!-- <?php
-                            include 'dbcon_gru.php';
+                            <?php
+                            /*
                             $results = mysql_query("SELECT Poster, Title, Genre, duration, Imdb_rating FROM movies");
                             while($row = mysql_fetch_array($results)) 
                             {
@@ -470,13 +398,12 @@
                                 <td><?php echo $row['duration']?></td>
                                 <td><?php echo $row['Genre']?></td>
                                 <td><?php echo $row['Imdb_rating']?></td>
-                                <td><?php echo &row['DatumFuif']?></td>
                             </tr>
 
                             <?php
-                            }
-                            ?> 
-                            -->
+                            }*/
+                            ?>
+                            
                             <!--<tr>
                                 
                                 <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
@@ -487,87 +414,7 @@
                                 <td>9,5</td>
                                 <td>Math</td>
                             </tr>
-                            <tr>  
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMTU2NzM2Mjg2Ml5BMl5BanBnXkFtZTYwNjI5Mjg5._V1_SX640_SY720_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>  
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>  
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>  
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>
-                            <tr>
-                                <td><img src="http://ia.media-imdb.com/images/M/MV5BMjQyODg5Njc4N15BMl5BanBnXkFtZTgwMzExMjE3NzE@._V1_UY268_CR1,0,182,268_AL_.jpg" alt="" border=2 height=140 width=91></img></td>
-                                <td>Deadpool</td>
-                                <td>1h 48min</td>
-                                <td>Action, Adventure, Comedy</td>
-                                <td>8,3</td>
-                                <td>9,5</td>
-                                <td>Math</td>
-                            </tr>-->
+                            -->
                         </tbody>
                     </table>
                     </div>
